@@ -3,6 +3,7 @@ import Loader from "./Loader";
 import Badge from "../images/Badge.png";
 
 const SkillTable = ({ skills, handleUpdate }) => {
+  // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const skillsPercentage = skills.filter((skill) => skill.resume !== 0);
