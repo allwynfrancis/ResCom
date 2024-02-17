@@ -85,7 +85,7 @@ const Signup = () => {
             to="/login"
             onClick={() => {
               navigate("/login");
-              window.location.reload();
+              // window.location.reload();
             }}
           >
             <button type="button" className={styles.white_btn}>
