@@ -43,7 +43,8 @@ const ResumeInput = ({
           `https://rescombackend.onrender.com/api/auth/resume/${userEmail}`
         );
         const { resumeContent, fileName, firstName } = response.data;
-        if (localStorage.getItem("token") && (resumeContent !== "")) {
+        // console.log(resumeContent);
+        if (localStorage.getItem("token") && (resumeContent !== null)) {
           // Display a notification message
           showPopup("Here is your previous resume");
           localStorage.setItem("token", "true");
