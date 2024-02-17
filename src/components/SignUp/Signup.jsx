@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import { auth, signInWithPopup, GoogleAuthProvider } from "../firebase";
 
+
 const Signup = () => {
   const [data, setData] = useState({
     firstName: "",
@@ -24,7 +25,7 @@ const Signup = () => {
 
     try {
       console.log("Form Data:", data);
-      const url = "http://localhost:8080/api/users";
+      const url = `https://rescombackend.onrender.com/api/users`;
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
@@ -59,7 +60,7 @@ const Signup = () => {
     };
     try {
       console.log(userData);
-      const url = "http://localhost:8080/api/users";
+      const url = `https://rescombackend.onrender.com/api/users`;
       const { data: res } = await axios.post(url, userData);
       navigate("/login");
       console.log(res.message);

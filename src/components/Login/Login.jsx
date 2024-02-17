@@ -42,7 +42,7 @@ const Login = ({ setToken }) => {
       provider: user.providerId,
     };
     try {
-      const url = "http://localhost:8080/api/auth";
+      const url = `https://rescombackend.onrender.com/api/auth`;
       const { data: res } = await axios.post(url, userData);
       localStorage.setItem("token", res.data);
       setToken(res.data);
@@ -71,7 +71,8 @@ const Login = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/auth";
+      const url = `https://rescombackend.onrender.com/api/auth`;
+      console.log(url)
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       setToken(res.data);
@@ -97,7 +98,7 @@ const Login = ({ setToken }) => {
 
   const fetchUserData = async (email) => {
     try {
-      const url = `http://localhost:8080/api/auth/${email}`;
+      const url = `https://rescombackend.onrender.com/api/auth/${email}`;
       const { data } = await axios.get(url);
       // console.log("Fetched user data:", data);
       return data; // User data retrieved from MongoDB

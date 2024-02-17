@@ -40,7 +40,7 @@ const ResumeInput = ({
     const fetchResume = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/auth/resume/${userEmail}`
+          `https://rescombackend.onrender.com/api/auth/resume/${userEmail}`
         );
         const { resumeContent, fileName, firstName } = response.data;
         if (localStorage.getItem("token") && (resumeContent !== "")) {
@@ -103,7 +103,7 @@ const ResumeInput = ({
           try {
             console.log("Resume content saved:", file.name);
             const response = await axios.post(
-              "http://localhost:8080/api/auth/resume",
+              `https://rescombackend.onrender.com/api/auth/resume`,
               {
                 email: userEmail, // Assuming userEmail is the user's email
                 content: textContent,
@@ -145,7 +145,7 @@ const ResumeInput = ({
     try {
       console.log("Resume content saved from text");
       const response = await axios.post(
-        "http://localhost:8080/api/auth/resume",
+        `https://rescombackend.onrender.com/api/auth/resume`,
         {
           email: userEmail, // Assuming userEmail is the user's email
           content: newText,
