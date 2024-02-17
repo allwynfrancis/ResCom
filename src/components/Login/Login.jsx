@@ -185,7 +185,7 @@ const Login = ({ setToken }) => {
             to="/signup"
             onClick={() => {
               navigate("/signup");
-              window.location.reload();
+              // window.location.reload();
             }}
           >
             <button type="button" className={styles.white_btn}>
